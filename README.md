@@ -1,4 +1,4 @@
-pixelada Comms Translator
+Pixelada Comms Translator
 ========
 
 Pixelada Comms Translator is a C++ application to take/send tags from/to industrial automation stations (for now, only through modbus TCP/IP communications, but it could use all formats supported by the [pvbrowser](http://pvbrowser.de) framework) and store them in a database, with the aim to share it to others systems as a simple Ms Windows OPC communication bridge.
