@@ -55,9 +55,9 @@ Copyright 2022, Pixelada S. Coop. And. <info (at) pixelada (dot) org>
 ## License
 
 ```
-Pixelada Comms Translator is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+Pixelada Comms Translator is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the Free Software Foundation, 
+either version 3 of the License, or (at your option) any later version.
 
 Pixelada Comms Translator is distributed in the hope that it will 
 be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
