@@ -7,6 +7,8 @@ This is intended for old Factorylink SCADA's software, already used in Industry.
 
 I could also offer a REST api in future. 
 
+This project is marked as the Industrial Electronics Engineering Degree final project of the Pixelada's member, [Joaquín Cuéllar](https://github.com/gentooza).
+
 ## Features
 
 + It's configurable via easy XML files, where edit Database type, topology, communications,tag, etc.
