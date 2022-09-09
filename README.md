@@ -1,4 +1,4 @@
-pixelada Comms Translator
+Pixelada Comms Translator
 ========
 
 Pixelada Comms Translator is a C++ application to take/send tags from/to industrial automation stations (for now, only through modbus TCP/IP communications, but it could use all formats supported by the [pvbrowser](http://pvbrowser.de) framework) and store them in a database, with the aim to share it to others systems as a simple Ms Windows OPC communication bridge.
@@ -55,9 +55,9 @@ Copyright 2022, Pixelada S. Coop. And. <info (at) pixelada (dot) org>
 ## License
 
 ```
-Pixelada Comms Translator is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+Pixelada Comms Translator is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the Free Software Foundation, 
+either version 3 of the License, or (at your option) any later version.
 
 Pixelada Comms Translator is distributed in the hope that it will 
 be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
