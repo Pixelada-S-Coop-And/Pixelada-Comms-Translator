@@ -39,7 +39,6 @@ class DBTriggersTable : public DBTable
   int sqlResetTg(char *& sql, char *triggerName);
   int sqlTrgsDone(char *& sql);
   //
-  int updateTriggersOn(char ** triggers, int numberOf);
   int updtTrgsOn(std::vector <char*> triggersOn);
   int updtTrgsDone(std::vector <field*> triggersLst);
  
