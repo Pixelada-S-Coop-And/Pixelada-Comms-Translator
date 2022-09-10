@@ -260,7 +260,7 @@ int pixeladaCT::loop()
 {
   //exit handling
   struct sigaction sigIntHandler;
-  int failed = -1;
+  int failed = 0;
   
   sigIntHandler.sa_handler = pixeladaCT::exitHandler;
   sigemptyset(&sigIntHandler.sa_mask);
@@ -270,44 +270,41 @@ int pixeladaCT::loop()
 
   //startCommunications();
   while(1)
-    {
-      if(!lExit)
-	{
-	  failed = 0;
-	  std::cout << "*----------------------------------------------*" << std::endl;
-	  std::cout << "INFO: checking communications ..." << std::endl;     
-	  checkComm();
-	  std::cout << "INFO: taking data from communications ..." << std::endl;  
-	  if(dataCapture())
+  {
+    if(!lExit)
+	  {
+	    std::cout << "*----------------------------------------------*" << std::endl;
+	    std::cout << "INFO: checking communications ..." << std::endl;     
+	    checkComm();
+	    std::cout << "INFO: taking data from communications ..." << std::endl;  
+	    if(dataCapture())
 	    {
 	      failed = -1;
-	      std::cout << "ERROR: NO DATA CAPTURED! ..." << std::endl;   
+	      std::cout << "ERROR: SOME DATA NO CAPTURED! ..." << std::endl;   
 	    }
-	  if(!failed)
-	    {
-	      std::cout << "INFO: are there some tables locked ..."; 
-	      lockTables();
-	      std::cout << "INFO: are there some triggers triggered? ..." << std::endl;	      
-	      getTriggers();
-	      //showTriggers();
-	      std::cout << "INFO: dataBase to Slaves ..." << std::endl;		      
-	      dataToComm();
-	      std::cout << "INFO: slaves to DataBase ..." << std::endl;		      
-	      dataToDB();
-	      std::cout << "INFO: reset Triggers ..." << std::endl;	      
-	      delTriggers();
-	      //Sleep(500);
-	    }
-	  //std::cout << "DEBUG: showing what we have stored ..." << std::endl;
-	  //showDBData();	  
-	}
-      else
-	{
-	  std::cout << "INFO: EXITING! ..." << std::endl;
-	  stopComm();
-	  return 0;
-	}
-    }
+	    std::cout << "INFO: are there some tables locked ..."; 
+	    lockTables();
+	    std::cout << "INFO: are there some triggers triggered? ..." << std::endl;	      
+	    getTriggers();
+	    //showTriggers();
+	    std::cout << "INFO: dataBase to Slaves ..." << std::endl;		      
+	    dataToComm();
+	    std::cout << "INFO: slaves to DataBase ..." << std::endl;		      
+	    dataToDB();
+	    std::cout << "INFO: reset Triggers ..." << std::endl;	      
+	    delTriggers();
+	    //Sleep(500);
+	  
+	    //std::cout << "DEBUG: showing what we have stored ..." << std::endl;
+	    //showDBData();	  
+	  }
+    else
+	  {
+	    std::cout << "INFO: EXITING! ..." << std::endl;
+	    stopComm();
+	    break;
+	  }
+  }
   return 0;   
 }
 
