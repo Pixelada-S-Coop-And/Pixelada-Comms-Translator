@@ -124,10 +124,10 @@ int pixeladaCT::stopComm()
 it should takes data from communications mailboxes and save it to it's slave structure*/
 int pixeladaCT::dataCapture()
 {
-  int failed = -1;
+  int failed = 0;
   for(int i=0; i < nSlaves; i++)
-    failed= failed & hSlaves[i]->readData();
-  return failed;   
+    failed = failed + hSlaves[i]->readData();
+  return failed;
 }
 /*data from DB to communication process (WRITTING)
 it takes data from database table and write it to it's slave*/
@@ -250,7 +250,7 @@ int pixeladaCT::storeDB()
 */
 int pixeladaCT::startCommunications()
 {
-  //commDaemon->launchDaemons(); TODO launch one daemon for every slave, not one for all
+  // commDaemon->launchDaemons(); TODO launch one daemon for every slave, not one for all
   return 0;   
 }
 
